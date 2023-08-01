@@ -48,3 +48,20 @@ button {
     background: transparent;
     cursor: pointer;
 }
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    background-color: var(--white);
+    z-index: 1;
+}
+
+.closeButton {
+    background-color: var(--greyD9);
+    padding: 12px 23px;
+    border-radius: 0 0 3px 3px;
+    width: 100%;
+}

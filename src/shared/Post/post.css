@@ -1,0 +1,9 @@
+.modal {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    right: 10%;
+    background-color: var(--white);
+    filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.15));
+    padding: 20px;
+}

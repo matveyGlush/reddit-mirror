@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './metadata.css';
 import {UserLink} from "./UserLink";
+import {parseDateUTC} from "../../../../../utils/react/parseDateUTC";
 
-export function MetaData() {
+
+export function MetaData( { created_utc, author }: { created_utc: number, author: string}) {
   return (
       <div className={styles.metaData}>
-        <UserLink />
+        <UserLink author={author}/>
         <span className={styles.createdAt}>
             <span className={styles.publishedLabel}>Опубликовано </span>
-            4 часа назад
+          {parseDateUTC(created_utc)}
         </span>
       </div>
   );

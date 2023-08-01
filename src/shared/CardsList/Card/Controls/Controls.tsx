@@ -4,10 +4,10 @@ import {KarmaCounter} from "./KarmaCounter";
 import {CommentsButton} from "./CommentsButton";
 import {Actions} from "./Actions";
 
-export function Controls() {
+export function Controls(props: { downs: number, ups: number}) {
   return (
       <div className={styles.controls}>
-          <KarmaCounter />
+          <KarmaCounter downs={props.downs} ups={props.ups}/>
           <CommentsButton />
           <Actions />
       </div>

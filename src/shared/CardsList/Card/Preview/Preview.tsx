@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './preview.css';
+import {IMAGE_DEFAULT} from "../../../../constants";
 
-export function Preview() {
+const defaultPreview: Preview = {
+  images: [{
+    source: {
+      url: IMAGE_DEFAULT,
+    }
+  }]
+}
+
+
+
+export function Preview({ preview = defaultPreview }: {preview: Preview | undefined}) {
+  const [imgUrl, setImgUrl] = useState(preview.images[0].source.url)
   return (
       <div className={styles.preview}>
         <img className={styles.previewImg}
-            src="https://cdn.dribbble.com/userupload/4693931/file/original-cd1b6b898dca6b75ef03bc726c626256.png?compress=1&resize=752x"
-            alt="main card picture ?"
+            src={imgUrl}
+            alt="main card picture"
+             onError={(event) => setImgUrl(IMAGE_DEFAULT)}
         />
       </div>
   );
