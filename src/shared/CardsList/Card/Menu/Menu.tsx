@@ -14,15 +14,12 @@ export function Menu() {
   return (
     <>
       <div className={styles.menu} ref={dropdownRef} ></div>
-      {isDropdown && <Dropdown button={<button className={styles.menuButton}>
-        <Icon name={ICONS.menu} size={31}/>
-      </button>}
-                 destination={dropdownRef.current}
-                 onClose={() => {
-                 }}
-                 onOpen={() => {
-                 }}
-                 isOpen={false}>
+      {isDropdown && <Dropdown
+          button={<button className={styles.menuButton}><Icon name={ICONS.menu} size={31}/></button>}
+          destination={dropdownRef.current}
+          onClose={() => {}}
+          onOpen={() => {}}
+          isOpen={false}>
         <div className="dropdown">
           <MenuItemsList postId='1234'/>
           <button className="closeButton">

@@ -5,7 +5,4 @@ type CommentContext = {
   onChange: (value: string) => void;
 }
 
-export const commentContext = React.createContext<CommentContext>({
-  value: '',
-  onChange: () => {},
-});
+export const commentContext = React.createContext<CommentContext>({ value: '', onChange: () => {} });

@@ -8,7 +8,13 @@ import {Controls} from "./Controls";
 export function Card(props: PostData) {
   return (
       <li className={styles.card}>
-          <TextContent title={props.title} author={props.author} created_utc={props.created_utc}/>
+          <TextContent
+            title={props.title}
+            author={props.author}
+            created_utc={props.created_utc}
+            postId={props.postId}
+            subreddit={props.subreddit}
+          />
           <Preview preview={props.preview}/>
           <Menu />
           <Controls downs={props.downs} ups={props.ups}/>

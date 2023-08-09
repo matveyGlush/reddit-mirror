@@ -8,7 +8,7 @@ type ITitleState = {
   target: HTMLElement,
 }
 
-export function Title({ title }: {title: string}) {
+export function Title({ title, subreddit, postId }: {title: string, subreddit: string, postId: string}) {
   const [isModalOpened, setIsModalOpened] = useState<ITitleState>({isModalOpen: false, target: document.body});
   return (
       <h2 className={styles.title}>
@@ -17,7 +17,12 @@ export function Title({ title }: {title: string}) {
         </a>
 
         {isModalOpened.isModalOpen && (
-          <Post onClose={() => setIsModalOpened({isModalOpen: false, target: document.body} )} height={offset(isModalOpened.target).top - 50}/>
+          <Post
+            onClose={() => setIsModalOpened({isModalOpen: false, target: document.body} )}
+            height={offset(isModalOpened.target).top - 50}
+            subreddit={subreddit}
+            postId={postId}
+          />
         )}
       </h2>
   );

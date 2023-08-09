@@ -7,13 +7,15 @@ interface ITextContentProps {
   title: string,
   author: string,
   created_utc: number,
+  subreddit: string,
+  postId: string,
 }
 
-export function TextContent({ title, author, created_utc }: ITextContentProps) {
+export function TextContent({ title, author, created_utc, subreddit, postId }: ITextContentProps) {
   return (
       <div className={styles.textContent}>
           <MetaData author={author} created_utc={created_utc} />
-          <Title title={title} />
+          <Title title={title} subreddit={subreddit} postId={postId} />
       </div>
   );
 }

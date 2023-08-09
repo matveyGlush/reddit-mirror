@@ -3,13 +3,15 @@ interface Window {
 }
 
 type PostData = {
-  id?: string,
+  id: string,
   author: string,
   title: string,
   downs: number,
   ups: number,
   preview: Preview,
   created_utc: number,
+  postId: string,
+  subreddit: string,
 }
 
 type Preview = {

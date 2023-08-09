@@ -8,6 +8,7 @@ export function CardsList() {
   const posts = useContext(postsContext)
   const listItems = posts ? posts.map(post =>
     <Card
+      id={""}
       key={post.data.id}
       author={post.data.author}
       title={post.data.title}
@@ -15,6 +16,8 @@ export function CardsList() {
       ups={post.data.ups}
       preview={post.data.preview}
       created_utc={post.data.created_utc}
+      postId={post.data.id}
+      subreddit={post.data.subreddit}
     />
   ) : <Text size={20}>no posts. error!!!!!!</Text>
 

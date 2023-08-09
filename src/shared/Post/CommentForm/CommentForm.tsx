@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useContext, useRef, useState} from 'react';
+import React, {ChangeEvent, FormEvent, useContext, useRef} from 'react';
 import styles from './commentform.css';
 import {commentContext} from "../../context/commentContext";
 

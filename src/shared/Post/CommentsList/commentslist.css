@@ -1,0 +1,14 @@
+.commentList {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.commentList .commentList {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 15px;
+}
+.commentList ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    margin-left: 15px;
+}
