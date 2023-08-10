@@ -1,5 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './replyform.css';
+import {Icon} from "../../../Icon";
+import {ICONS} from "../../../../constants";
 
 export function ReplyForm({ name }: { name: string }){
   const [inputValue, setInputValue] = useState(`${name}, `);
@@ -23,14 +25,27 @@ export function ReplyForm({ name }: { name: string }){
   }
 
   return (
-    <>
+    <div className={styles.replyContainer}>
       { isReplyFormOpened
         ? <form onSubmit={(event) => handleSubmitReplyForm(event)}>
             <input onChange={(event) => setInputValue(event.target.value)} ref={inputReference} type="text"/>
             <button type={"submit"} className={styles.replyBtn}>Отправить</button>
           </form>
-        : <button onClick={(event) => {handleOpenReplyForm(event)}} className={styles.replyBtn}>Ответить</button>
+        : <ul className={styles.buttonList}>
+            <li className={styles.buttonListItem}>
+              <Icon name={ICONS.comment} size={16}></Icon>
+              <button onClick={(event) => {handleOpenReplyForm(event)}} className={styles.replyBtn}>Ответить</button>
+            </li>
+            <li className={styles.buttonListItem}>
+              <Icon name={ICONS.share} size={16}></Icon>
+              <button className={styles.replyBtn}>Поделиться</button>
+            </li>
+            <li className={styles.buttonListItem}>
+              <Icon name={ICONS.warning} size={16}></Icon>
+              <button className={styles.replyBtn}>Пожаловаться</button>
+            </li>
+          </ul>
       }
-    </>
+    </div>
   );
 }

@@ -20,4 +20,16 @@
     resize: none;
     border: 1px solid var(--greyD9);
     border-radius: 3px 3px 0 0;
+    outline: none;
+    padding: 16px 18px;
+}
+
+.input:focus-visible {
+    border: 1px solid var(--greyD9);
+}
+
+.form {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--greyD9);
 }

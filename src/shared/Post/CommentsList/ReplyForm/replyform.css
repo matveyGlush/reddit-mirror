@@ -1,4 +1,16 @@
 .replyBtn {
-    display: block;
-    background-color: var(--greyD9);
+    color: var(--grey99);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.replyContainer {
+    display: flex;
+    margin-left: 10px;
+}
+.buttonList {
+    display: flex;
+}
+.buttonListItem {
+    display: flex;
+    margin-bottom: 20px;
 }
