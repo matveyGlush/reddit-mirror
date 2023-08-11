@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+import {setTokenInStore} from "../store";
 
 export function useToken() {
   const [token, setToken] = useState('');
@@ -9,5 +11,6 @@ export function useToken() {
     }
   }, []);
 
-  return [token];
+  const dispatch = useDispatch();
+  dispatch(setTokenInStore(token));
 }

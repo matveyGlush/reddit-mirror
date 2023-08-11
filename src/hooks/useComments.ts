@@ -1,9 +1,10 @@
 import {useContext, useEffect, useState} from "react";
 import axios from "axios/index";
-import {tokenContext} from "../shared/context/tokenContext";
+import {useSelector} from "react-redux";
+import {RootState} from "../store";
 
 export function useComments(subreddit: string, postId: string) {
-  const token = useContext(tokenContext)
+  const token = useSelector<RootState, string>(state => state.token)
   const [comments, setComments] = useState([]);
   useEffect(() => {
     if (token === 'undefined') return;

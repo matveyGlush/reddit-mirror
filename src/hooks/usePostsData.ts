@@ -1,10 +1,11 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import {tokenContext} from "../shared/context/tokenContext";
+import {useSelector} from "react-redux";
+import {RootState} from "../store";
 
 export function usePostsData() {
   const [posts, setPosts] = useState([]);
-  const token = useContext(tokenContext)
+  const token = useSelector<RootState, string>(state => state.token)
   useEffect(() => {
     if (token === 'undefined') return;
     axios.get('https://oauth.reddit.com/best.json?sr_detail=true', {

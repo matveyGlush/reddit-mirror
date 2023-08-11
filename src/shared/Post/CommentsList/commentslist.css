@@ -1,6 +1,9 @@
 .commentList .commentList {
     margin: 10px 0 10px 40px;
 }
+.commentList {
+    padding: 0 20px;
+}
 .subreddit {
     font-size: 13px;
     background-color: var(--greyD9);
