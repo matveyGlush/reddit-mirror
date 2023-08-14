@@ -15,7 +15,7 @@ export function Card(props: PostData) {
             postId={props.postId}
             subreddit={props.subreddit}
           />
-          <Preview preview={props.preview}/>
+          <Preview />
           <Menu />
           <Controls downs={props.downs} ups={props.ups}/>
       </li>

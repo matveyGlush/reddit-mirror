@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { hot } from "react-hot-loader/root";
 import {Layout} from "./Layout";
 import './main.global.css'
@@ -8,14 +8,22 @@ import {CardsList} from "./CardsList";
 import {StrictMode} from 'react';
 import {UserContextProvider} from './context/userContext';
 import {PostContextProvider} from './context/postsContext';
-import {createStore} from "redux";
+import {applyMiddleware, createStore} from "redux";
 import {Provider} from "react-redux";
 import {composeWithDevTools} from "@redux-devtools/extension";
-import {rootReducer} from "../store";
+import {rootReducer, setToken} from "../store/reducer";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk),
+));
 
 function AppComponent () {
+  useEffect(() => {
+    const token = localStorage.getItem('token') === 'undefined' ? window.__token__ : localStorage.getItem('token');
+    store.dispatch(setToken(token));
+    if (token) localStorage.setItem('token', token);
+  }, []);
 
   return (
       <StrictMode>

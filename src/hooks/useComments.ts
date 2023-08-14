@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from "react";
 import axios from "axios/index";
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
+import {RootState} from "../store/reducer";
 
 export function useComments(subreddit: string, postId: string) {
   const token = useSelector<RootState, string>(state => state.token)
