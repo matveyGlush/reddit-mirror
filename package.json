@@ -2,15 +2,19 @@
   "homepage": "http://PikchaGameDev.github.io/react-deploy",
   "name": "reactapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "reddit-mirror from matve",
+  "engines": {
+    "node": "18.x"
+  },
   "main": "webpack.config.js",
   "scripts": {
     "predeploy": "npm run build:dev",
     "deploy": "gh-pages -d build:dev",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development CLIENT_ID=5SmZApmvGnNN2Q2tAgzV0Q node ./bin/dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,9 +34,7 @@
     "react-redux": "^8.1.2",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
-    "webpack-node-externals": "^3.0.0"
-  },
-  "devDependencies": {
+    "webpack-node-externals": "^3.0.0",
     "@hot-loader/react-dom": "^17.0.1",
     "@types/jest": "^28.1.6",
     "@types/react-dom": "^18.2.7",
