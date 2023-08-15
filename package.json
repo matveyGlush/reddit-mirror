@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "reddit-mirror from matve",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "main": "webpack.config.js",
   "scripts": {
