@@ -11,10 +11,10 @@
     "predeploy": "npm run build:dev",
     "deploy": "gh-pages -d build:dev",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build": "cross-env CLIENT_ID=-sV4qsf4pTnITkGHVidpnw SECRET=mG0cGfN1EVer1fDfqyoLhobIm6Y78Q DOMEN=https://matve-reddit-mirror-nfelu9249-matveyglush.vercel.app/ NODE_ENV=production webpack --config webpack.config.js",
+    "build": "cross-env CLIENT_ID=-sV4qsf4pTnITkGHVidpnw SECRET=mG0cGfN1EVer1fDfqyoLhobIm6Y78Q DOMEN=https://matve-reddit-mirror.vercel.app/ NODE_ENV=production webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development CLIENT_ID=5SmZApmvGnNN2Q2tAgzV0Q SECRET=MTEO9_vkfnO2KFM91kROMpWk4H2V2A DOMEN=http://localhost:3000/ node ./bin/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node CLIENT_ID=-sV4qsf4pTnITkGHVidpnw SECRET=mG0cGfN1EVer1fDfqyoLhobIm6Y78Q DOMEN=https://matve-reddit-mirror-nfelu9249-matveyglush.vercel.app/ dist/server/server.js"
+    "start": "node CLIENT_ID=-sV4qsf4pTnITkGHVidpnw SECRET=mG0cGfN1EVer1fDfqyoLhobIm6Y78Q DOMEN=https://matve-reddit-mirror.vercel.app/ dist/server/server.js"
   },
   "author": "",
   "license": "ISC",
