@@ -1,22 +1,18 @@
 {
-  "homepage": "",
+  "homepage": "http://PikchaGameDev.github.io/react-deploy",
   "name": "reactapp",
   "version": "1.0.0",
-  "description": "reddit-mirror from matve",
-  "engines": {
-    "node": "16.x"
-  },
+  "description": "reddit mirror",
   "main": "webpack.config.js",
   "scripts": {
     "predeploy": "npm run build:dev",
     "deploy": "gh-pages -d build:dev",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build": "cross-env CLIENT_ID=-sV4qsf4pTnITkGHVidpnw SECRET=mG0cGfN1EVer1fDfqyoLhobIm6Y78Q DOMEN=https://matve-reddit-mirror.vercel.app/ NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development CLIENT_ID=5SmZApmvGnNN2Q2tAgzV0Q SECRET=MTEO9_vkfnO2KFM91kROMpWk4H2V2A DOMEN=http://localhost:3000/ node ./bin/dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node CLIENT_ID=-sV4qsf4pTnITkGHVidpnw SECRET=mG0cGfN1EVer1fDfqyoLhobIm6Y78Q DOMEN=https://matve-reddit-mirror.vercel.app/ dist/server/server.js"
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development CLIENT_ID=5SmZApmvGnNN2Q2tAgzV0Q node ./bin/dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "matve",
   "license": "ISC",
   "dependencies": {
     "@redux-devtools/extension": "^3.2.5",
@@ -33,8 +29,9 @@
     "react-dom": "^17.0.1",
     "react-redux": "^8.1.2",
     "redux": "^4.2.1",
-    "redux-thunk": "^2.4.2",
-    "webpack-node-externals": "^3.0.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
     "@hot-loader/react-dom": "^17.0.1",
     "@types/jest": "^28.1.6",
     "@types/react-dom": "^18.2.7",

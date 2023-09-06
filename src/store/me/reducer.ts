@@ -14,9 +14,10 @@ export type MeState = {
   error: string;
   data: IUserData;
 }
-type MeActions = | MeRequestAction
+type MeActions = MeRequestAction
   | MeRequestSuccessAction
-  | MeRequestErrorAction
+  | MeRequestErrorAction;
+
 export const meReducer: Reducer<MeState, MeActions> = (state, action) => {
   switch (action.type) {
     case ME_REQUEST:
@@ -28,11 +29,13 @@ export const meReducer: Reducer<MeState, MeActions> = (state, action) => {
       return {
         ...state,
         error: action.error,
+        loading: false,
       }
     case ME_REQUEST_SUCCESS:
       return {
         ...state,
         data: action.data,
+        loading: false,
       }
     default:
       return state;

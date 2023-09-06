@@ -8,10 +8,17 @@ import {KarmaCounter} from "../../CardsList/Card/Controls/KarmaCounter";
 
 export function CommentsList(props: {subreddit: string, postId: string}) {
 
-  const comments = useComments(props.subreddit, props.postId);
+  let { comments } = useComments(props.subreddit, props.postId);
+  if (comments.length === undefined && Object.entries(comments).length > 0 && Object.entries(comments)[0][0] !== 'error') {
+    comments = Object.entries(comments)[0][1]
+    console.log(comments)
+  } else comments = []
 
   function recursiveComm(comm: any) {
+    console.log('hello outside')
+
     if (comm.data.body) {
+      console.log('hello')
       return (
         <li className={styles.comment} key={comm.data.id} >
           <div className={styles.karmaCounterContainer}>
@@ -38,9 +45,10 @@ export function CommentsList(props: {subreddit: string, postId: string}) {
     )
   }
 
+  const loading = <p>loading</p>
   return (
     <div>
-      {buildCommentsTree(comments)}
+      {comments.length > 0 ? buildCommentsTree(comments) : loading}
     </div>
   );
 }

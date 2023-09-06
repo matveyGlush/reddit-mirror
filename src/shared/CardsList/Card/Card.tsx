@@ -4,20 +4,21 @@ import {TextContent} from "./TextContent";
 import {Preview} from "./Preview";
 import {Menu} from "./Menu";
 import {Controls} from "./Controls";
+import {PostData} from "../../../store/posts/reducer";
 
-export function Card(props: PostData) {
+export function Card({ data }: PostData) {
   return (
       <li className={styles.card}>
           <TextContent
-            title={props.title}
-            author={props.author}
-            created_utc={props.created_utc}
-            postId={props.postId}
-            subreddit={props.subreddit}
+            title={data.title}
+            author={data.author}
+            created_utc={data.created_utc}
+            postId={data.id}
+            subreddit={data.subreddit}
           />
-          <Preview />
+          <Preview title={data.title}/>
           <Menu />
-          <Controls downs={props.downs} ups={props.ups}/>
+          <Controls downs={data.downs} ups={data.ups}/>
       </li>
   );
 }

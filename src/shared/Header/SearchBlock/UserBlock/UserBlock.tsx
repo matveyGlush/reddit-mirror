@@ -7,12 +7,13 @@ import {Text} from "../../../Text";
 interface IUserBlockProps {
   avatarSrc?: string,
   username?: string,
+  loading?: boolean,
 }
 
-export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
+export function UserBlock({ avatarSrc, username, loading }: IUserBlockProps) {
   return (
     <a
-      href={`https://www.reddit.com/api/v1/authorize?client_id=5SmZApmvGnNN2Q2tAgzV0Q&response_type=code&state=random_string&redirect_uri=${process.env.DOMEN}auth&duration=permanent&scope=read submit identity`}
+      href="https://www.reddit.com/api/v1/authorize?client_id=5SmZApmvGnNN2Q2tAgzV0Q&response_type=code&state=random_string&redirect_uri=http://localhost:3000/auth&duration=permanent&scope=read submit identity"
       className={styles.userBox}>
       <div className={styles.avatarBox}>
         {avatarSrc
@@ -21,7 +22,11 @@ export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
       </div>
 
       <div className={styles.username}>
-        <Text size={20} color={username ? COLORS.black : COLORS.grey99}>{username || "Аноним"}</Text>
+        {loading ? (
+          <Text size={20} color={username ? COLORS.black : COLORS.grey99}>{"Загрузка..."}</Text>
+        ) : (
+          <Text size={20} color={COLORS.grey99}>{username || "Аноним"}</Text>
+        )}
       </div>
     </a>
   );
